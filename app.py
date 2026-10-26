@@ -17,7 +17,7 @@ DB_PATH = os.path.join(BASE_DIR, "student_skill_analyzer.db")
 UPLOAD_DIR = os.path.join(BASE_DIR, "uploads", "resumes")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder="templates")
 app.secret_key = "change-this-secret-key-in-production"
 app.config["UPLOAD_FOLDER"] = UPLOAD_DIR
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
